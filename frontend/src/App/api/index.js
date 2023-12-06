@@ -1,6 +1,7 @@
 const apiRoot = "http://localhost:5000/";
 
-export const postAudio = (audio, prompt, uuid) => {
+export const postAudio = (audio, prompt, uuid) =>
+{
     return fetch(apiRoot + `api/audio/?uuid=${uuid}&prompt=${prompt}`, {
         method: "POST",
         body: audio,
@@ -10,19 +11,22 @@ export const postAudio = (audio, prompt, uuid) => {
     })
 };
 
-export const getPrompt = uuid => {
+export const getPrompt = uuid =>
+{
     return fetch(apiRoot + `api/prompt/?uuid=${uuid}`, {
         method: "GET"
     });
 };
 
-export const getUser = uuid => {
+export const getUser = uuid =>
+{
     return fetch(apiRoot + `api/user/?uuid=${uuid}`, {
         method: 'GET'
     })
 }
 
-export const getAudioLen = (uuid, audio) => {
+export const getAudioLen = (uuid, audio) =>
+{
     return fetch(apiRoot + `api/audio/?uuid=${uuid}&get_len=True`, {
         method: "POST",
         body: audio,
@@ -32,7 +36,8 @@ export const getAudioLen = (uuid, audio) => {
     })
 }
 
-export const createUser = (uuid, name) => {
+export const createUser = (uuid, name) =>
+{
     const data = {
         uuid: uuid,
         user_name: name
